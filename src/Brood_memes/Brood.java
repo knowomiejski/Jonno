@@ -1,33 +1,42 @@
 package Brood_memes;
 
+import Ingedients.IngedientBehaviour;
+import Verpakking.VerpakkingBehaviour;
+
 public class Brood {
-    private String naam;
-    // Standaard is het brood niet verpakt, dit kan je met de setter veranderen
-    private String verpakking = "Niet verpakt";
-    private String ingedient;
+
+    private IngedientBehaviour ingedientBehaviour;
+    private VerpakkingBehaviour verpakkingBehaviour;
     private int hoeveelheid;
 
-    public Brood(int hoeveelheid) {
+    public Brood() {
+    }
+
+    public void setIngedientBehaviour(IngedientBehaviour ingedientBehaviour) {
+        this.ingedientBehaviour = ingedientBehaviour;
+    }
+
+    public void setHoeveelheid(int hoeveelheid) {
         this.hoeveelheid = hoeveelheid;
-    }
-
-    public void setVerpakking(String verpakking) {
-        this.verpakking = verpakking;
-    }
-
-    public String getNaam() {
-        return naam;
-    }
-
-    public String getVerpakking() {
-        return verpakking;
-    }
-
-    public String getIngedient() {
-        return ingedient;
     }
 
     public int getHoeveelheid() {
         return hoeveelheid;
+    }
+
+    public void setVerpakkingBehaviour(VerpakkingBehaviour verpakkingBehaviour) {
+        this.verpakkingBehaviour = verpakkingBehaviour;
+    }
+
+    public String doIngedient() {
+        return ingedientBehaviour.getIngedient();
+    }
+
+    public String doNaam() {
+        return ingedientBehaviour.getNaam();
+    }
+
+    public String doVerpakking() {
+        return verpakkingBehaviour.getVerpakking();
     }
 }
